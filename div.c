@@ -5,13 +5,13 @@
 #include <string.h>
 
 /**
- * e_div - divides the next higher value by the upper value
+ * _div - divides the next higher value by the upper value
  * @stack: stack ( by hand )
  * @row_cnt: Row counter
  *
  * Return: void
  */
-void e_div(stack_t **stack, unsigned int row_cnt)
+void _div(stack_t **stack, unsigned int row_cnt)
 {
 	int val;
 
