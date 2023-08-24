@@ -7,7 +7,7 @@
 /**
  * @stack: stack given by hand
  * @row_cnt: Row counter
- * e_add -  add the first two nodes of the stack
+ * _add -  add the first two nodes of the stack
  *
  * Return: void
  */
