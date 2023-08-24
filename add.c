@@ -16,7 +16,7 @@ void e_add(stack_t **stack, unsigned int row_cnt)
 
 	int val;
 
-	if (!((*stack)->next) || !stack || !*stack)
+	if (!stack || !*stack || !((*stack)->next))
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", row_cnt);
 		exit(EXIT_FAILURE);
