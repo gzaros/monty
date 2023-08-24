@@ -11,7 +11,7 @@
  *
  * Return: void
  */
-void e_add(stack_t **stack, unsigned int row_cnt)
+void _add(stack_t **stack, unsigned int row_cnt)
 {
 
 	int val;
