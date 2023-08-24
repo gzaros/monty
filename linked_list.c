@@ -5,12 +5,12 @@
 /**
  * @stack: stack given by hand
  * @n: counter of the node
- * _queue_node - add a node to a stack_t stack in queue_node
+ * queue_node - add a node to a stack_t stack in queue_node
  *
  * Return: Upon failure of memory allocation for the newly created node, the function
  * return NULL.
  */
-stack_t *_queue_node(stack_t **stack, const int n)
+stack_t *queue_node(stack_t **stack, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 	stack_t *current = *stack;
@@ -50,13 +50,13 @@ stack_t *_queue_node(stack_t **stack, const int n)
 }
 
 /**
- * _free_stack - Deallocates a doubly linked list (dlistint_t).
+ * free_stack - Deallocates a doubly linked list (dlistint_t).
  * @stack: stack given by main
  *
  * Return: void
  */
  
-void _free_stack(stack_t *stack)
+void free_stack(stack_t *stack)
 {
 
 	stack_t *next;
@@ -83,7 +83,7 @@ void _free_stack(stack_t *stack)
 }
 
 /**
- * _add_node - Appends a node at the beginning of a stack_t stack.
+ * add_node - Appends a node at the beginning of a stack_t stack.
  * @stack: stack given by hand
  * @n: number for the new node
  *
@@ -91,7 +91,7 @@ void _free_stack(stack_t *stack)
  * function will return NULL.
  */
 
-stack_t *_add_node(stack_t **stack, const int n)
+stack_t *add_node(stack_t **stack, const int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 
@@ -116,12 +116,12 @@ stack_t *_add_node(stack_t **stack, const int n)
 
 /**
  * @stack: stack head
- * _print_stack - display the value of a stack_t stack
+ * print_stack - display the value of a stack_t stack
  *
  * Return: number of elements present in the list
  */
 
-size_t _print_stack(const stack_t *stack)
+size_t print_stack(const stack_t *stack)
 {
 	size_t ca = 0;
 
