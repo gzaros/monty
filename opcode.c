@@ -1,60 +1,42 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "./monty.h"
-#include <stdlib.h>
 
 /**
- * @str: compare string
- * @row_cnt: Row counter
- * opcode - function responsible for executing the built-in elements
+ * opcode - function in charge of running builtins
  * @stack: stack given by main
+ * @str: string to compare
+ * @line_cnt: amount of lines
  *
  * Return: nothing
  */
-void opcode(stack_t **stack, char *str, unsigned int row_cnt)
+void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 {
+	int i = 0;
 
 	instruction_t op[] = INSTRUCTIONS;
-	int cnt = 0;
-
-
 
 	if (!strcmp(str, "stack"))
 	{
-
 		global.data_struct = 1;
-
 		return;
-
 	}
-
-
 	if (!strcmp(str, "queue"))
 	{
-
-		/* if not equal str */
 		global.data_struct = 0;
-
 		return;
-
 	}
 
-	while (op[cnt].opcode)
+	while (op[i].opcode)
 	{
-
-		if (strcmp(op[cnt].opcode, str) == 0)
+		if (strcmp(op[i].opcode, str) == 0)
 		{
-
-			op[cnt].f(stack, row_cnt);
-
-			return;  /* In case of a match being found, execute the function. */
+			op[i].f(stack, line_cnt);
+			return; /* if we found a match, run the function */
 		}
-
-		cnt++;
+		i++;
 	}
-
-
-	fprintf(stderr, "L%d: unknown instruction %s\n", row_cnt, str);
-
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_cnt, str);
 	exit(EXIT_FAILURE);
 }
