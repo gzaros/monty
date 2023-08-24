@@ -1,46 +1,35 @@
 #include <stdio.h>
-#include "monty.h"
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
+#include "monty.h"
 
 /**
- * @row_cnt: Row counter
- * _mod - calculate the remainder of the division
- * @stack: stack given by hand
+ * mod - computes the remainder of the division
+ * @stack: stack given by main
+ * @line_cnt: line counter
  *
  * Return: void
  */
-void _mod(stack_t **stack, unsigned int row_cnt)
+void mod(stack_t **stack, unsigned int line_cnt)
 {
+	int result;
 
-	int val;
-
-	if (!((*stack)->next) || !stack || !*stack )
+	if (!stack || !*stack || !((*stack)->next))
 	{
-
-		/* Can't mod, stack too short*/
-		fprintf(stderr, "L%d: can't mod, stack too short\n", row_cnt);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_cnt);
 		exit(EXIT_FAILURE);
-
 		return;
-
 	}
-
 	if (((*stack)->n) == 0)
 	{
-		/* Division by zero*/
-		fprintf(stderr, "L%d: division by zero\n", row_cnt);
+		fprintf(stderr, "L%d: division by zero\n", line_cnt);
 		exit(EXIT_FAILURE);
-
 		return;
-
 	}
 
-	val = ((*stack)->next->n) % ((*stack)->n);
-
-	pop(stack, row_cnt);  /*For the top node*/
-
-	(*stack)->n = val;
+	result = ((*stack)->next->n) % ((*stack)->n);
+	pop(stack, line_cnt);/*For top node*/
+	(*stack)->n = result;
 }
 

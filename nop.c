@@ -1,18 +1,14 @@
 #include "monty.h"
 
 /**
- * _nop - do nothing
- * @row_cnt : nothing
- * @stack: it does not matter
+ * nop -  does nothing
+ * @stack: doesnt matter
+ * @line_cnt : for nothing
  *
- * Return: do (nothing)
+ * Return: NOTHING
  */
-
-void _nop(stack_t **stack, unsigned int row_cnt)
+void nop(stack_t **stack, unsigned int line_cnt)
 {
-
-	(void) row_cnt;
-
 	(void) stack;
-	
+	(void) line_cnt;
 }

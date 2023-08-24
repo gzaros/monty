@@ -1,33 +1,30 @@
 #include <stdio.h>
-#include "monty.h"
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
+#include "monty.h"
 
 /**
- * @stack: stack given by hand
- * e_mul - divides the next higher value by the upper value
- * @row_cnt: Row counter
+ * _mul - divides the next top value by the top value
+ * @stack: stack given by main
+ * @line_cnt: line counter
  *
  * Return: void
  */
-void e_mul(stack_t **stack, unsigned int row_cnt)
+void _mul(stack_t **stack, unsigned int line_cnt)
 {
+	int result;
 
-	int val;
-	
-	if (!((*stack)->next) || !stack || !*stack )		
+	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", row_cnt);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_cnt);
 		exit(EXIT_FAILURE);
 		return;
 	}
 
-	val = ((*stack)->next->n) * ((*stack)->n);
-
-	pop(stack, row_cnt); /*For the top node*/
-
-	(*stack)->n = val;
+	result = ((*stack)->next->n) * ((*stack)->n);
+	pop(stack, line_cnt);/*For top node*/
+	(*stack)->n = result;
 }
 
 
