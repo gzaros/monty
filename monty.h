@@ -5,25 +5,24 @@
 #include <stddef.h>
 
 
+
 #define INSTRUCTIONS              \
 	{                           \
-		    {"push", push},       \
-			{"add", _add},    \
-		    {"sub", _sub},    \
+		{"push", push},       \
 		    {"pall", pall},   \
 		    {"pint", pint},   \
 		    {"pop", pop},     \
 		    {"swap", swap},   \
-			{"mod", mod},     \
+		    {"nop", nop},     \
+		    {"div", _div},    \
+		    {"mul", _mul},    \
+		    {"add", _add},    \
+		    {"sub", _sub},    \
+		    {"mod", mod},     \
 		    {"pchar", pchar}, \
 		    {"pstr", pstr},   \
 		    {"rotl", rotl},   \
 		    {"rotr", rotr},   \
-		    {"nop", nop},     \
-		    {"div", _div},    \
-		    {"mul", _mul},    \
-		   
-		    
 		{                     \
 			NULL, NULL      \
 		}                     \

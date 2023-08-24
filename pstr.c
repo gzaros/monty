@@ -11,7 +11,7 @@
  */
 
 
-void pstr(unsigned int row_cnt __attribute__((unused)), stack_t **stack)
+void pstr(stack_t **stack, unsigned int row_cnt __attribute__((unused)))
 {
 
 	stack_t *current = *stack;

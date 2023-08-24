@@ -6,12 +6,12 @@
 /**
  * @str: compare string
  * @row_cnt: Row counter
- * _opcode - function responsible for executing the built-in elements
+ * opcode - function responsible for executing the built-in elements
  * @stack: stack given by main
  *
  * Return: nothing
  */
-void _opcode(stack_t **stack, char *str, unsigned int row_cnt)
+void opcode(stack_t **stack, char *str, unsigned int row_cnt)
 {
 
 	instruction_t op[] = INSTRUCTIONS;
@@ -32,7 +32,7 @@ void _opcode(stack_t **stack, char *str, unsigned int row_cnt)
 	if (!strcmp(str, "queue"))
 	{
 
-		// if not equal str
+		/* if not equal str */
 		global.data_struct = 0;
 
 		return;
