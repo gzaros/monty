@@ -104,7 +104,7 @@ int is_digit(char *string);
 int isnumber(char *str);
 
 
-void _div(stack_t **stack, unsigned int row_cnt);
+void e_div(stack_t **stack, unsigned int row_cnt);
 void _add(stack_t **stack, unsigned int row_cnt);
 void _sub(stack_t **stack, unsigned int row_cnt);
 void _mul(stack_t **stack, unsigned int row_cnt);
