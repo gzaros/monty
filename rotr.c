@@ -8,34 +8,33 @@
 * Return: void
 */
 
-void rotl(stack_t **stack, unsigned int row_count)
+
+void rotr(stack_t **stack, unsigned int row_count)
 {
+	stack_t *bottom;
+	stack_t *prev;
 
-        stack_t *prev;
-        stack_t *bottom;
+	(void) row_count;
+        
+	if (!stack || !*stack || !(*stack)->next)
+		return;
 
+	bottom = *stack;
 
-        (void) row_count;
-
-        if (!*stack || !(*stack)->next || !stack)
-                return;
-
-        bottom = *stack;
-
-        while (bottom->next)
-                bottom = bottom->next;
+	while (bottom->next)
+		bottom = bottom->next;
 
 
-    prev = bottom->prev;
-	
+
+	prev = bottom->prev;
+
 	bottom->next = *stack;
-	
-	bottom->prev = NULL;
-	
-	prev->next = NULL;
-	
-	(*stack)->prev = bottom;
-	
-	*stack = bottom;
 
+	bottom->prev = NULL;
+
+	prev->next = NULL;
+
+	(*stack)->prev = bottom;
+
+	*stack = bottom;
 }
