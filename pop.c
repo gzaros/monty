@@ -5,26 +5,33 @@
 #include "monty.h"
 
 /**
-* pop - pops the very top element of the stack
+* pop - Removes the element at the very top of the stack.
 * @stack: stack given by main in start.c
-* @line_cnt: line number for error messages
+* @row_cnt: Row number for error messages
 *
 * Return: void
 */
-void pop(stack_t **stack, unsigned int line_cnt)
+
+void pop(stack_t **stack, unsigned int row_cnt)
 {
+
 	stack_t *tmp = NULL;
 
 	if (!stack || !*stack)
 	{
-		fprintf(stderr, "L%u: can't pop an empty stack\n", line_cnt);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", row_cnt);
+
 		exit(EXIT_FAILURE);
+
 	}
 
-	tmp = (*stack)->next;
 	free(*stack);
+	tmp = (*stack)->next;
+
 	*stack = tmp;
+
 	if (!*stack)
-		return; /* prevents errors cause next line might assign a NULL */
+		return;
+
 	(*stack)->prev = NULL;
 }
