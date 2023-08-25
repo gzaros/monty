@@ -38,9 +38,9 @@ void opcode(stack_t **stack, char *str, unsigned int row_cnt)
 			op[ii].f(stack, row_cnt);
 			return; 
 		}
-		i++;
+		ii++;
 	}
-	
+
 	fprintf(stderr, "L%d: unknown instruction %s\n", row_cnt, str);
 	exit(EXIT_FAILURE);
 }
