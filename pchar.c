@@ -6,25 +6,34 @@
 #include "monty.h"
 
 /**
- * pchar - prints the int at the top of the stack as char
+ * @row_cnt: Row counter
+ * pchar - display the int at the top of the stack as a character
  * @stack: stack given by main
- * @line_cnt: ammount of lines
  *
  * Return: void
  */
-void pchar(stack_t **stack, unsigned int line_cnt)
+void pchar(stack_t **stack, unsigned int row_cnt)
 {
-	if (!stack || !(*stack))
+
+	if (!(*stack) || !stack )
 	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_cnt);
+		/* Can't pchar, stack empty */
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", row_cnt);
+
 		return;
+
 	}
 
 	if (isascii((*stack)->n) == 0)
 	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_cnt);
+
+		/* Can't pchar, value out of range */
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", row_cnt);
+
 		return;
+
 	}
+
 
 	printf("%c\n", (*stack)->n);
 
