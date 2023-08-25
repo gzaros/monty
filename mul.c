@@ -5,26 +5,27 @@
 #include "monty.h"
 
 /**
- * _mul - divides the next top value by the top value
- * @stack: stack given by main
- * @line_cnt: line counter
+ * @stack: stack given by hand
+ * _mul - divides the next higher value by the upper value
+ * @row_cnt: Row counter
  *
  * Return: void
  */
-void _mul(stack_t **stack, unsigned int line_cnt)
+void _mul(stack_t **stack, unsigned int row_cnt)
 {
-	int result;
 
-	if (!stack || !*stack || !((*stack)->next))
+	int val;
+	
+	if (!((*stack)->next) || !stack || !*stack )		
 	{
-		fprintf(stderr, "L%d: can't mul, stack too short\n", line_cnt);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", row_cnt);
 		exit(EXIT_FAILURE);
 		return;
 	}
 
-	result = ((*stack)->next->n) * ((*stack)->n);
-	pop(stack, line_cnt);/*For top node*/
-	(*stack)->n = result;
+	val = ((*stack)->next->n) * ((*stack)->n);
+
+	pop(stack, row_cnt); /*For the top node*/
+
+	(*stack)->n = val;
 }
-
-
