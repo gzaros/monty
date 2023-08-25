@@ -1,12 +1,13 @@
 #define  _POSIX_C_SOURCE 200809L
+#include "monty.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "monty.h"
 
 void file_error(char *argv);
 void error_usage(void);
-int status = 0;		/* global var declaration */
+int status = 0;
+
 
 /**
  * main - entry point
@@ -59,23 +60,8 @@ int main(int argc, char **argv)
 }
 
 /**
- * file_error - prints file error message and exits
- * @argv: argv given by main()
- *
- * Desc: print msg if  not possible to open the file
- * Return: nothing
- */
-void file_error(char *argv)
-{
-	fprintf(stderr, "Error: Can't open file %s\n", argv);
-	exit(EXIT_FAILURE);
-}
-
-/**
- * error_usage - prints usage message and exits
- *
- * Desc: if user does not give any file or more than
- * one argument to your program
+ * error_usage - Displays a usage message and terminates.
+ * a single argument to your program
  *
  * Return: nothing
  */
@@ -84,3 +70,20 @@ void error_usage(void)
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
+
+
+/**
+ * file_error - Displays a file error message and terminates.
+ * @argv: Command-line arguments provided by the main() function.
+ *
+ * Desc: Print a message if it's not possible to open the file.
+ * Return: nothing
+ */
+
+void file_error(char *argv)
+{
+	fprintf(stderr, "Error: Can't open file %s\n", argv);
+	exit(EXIT_FAILURE);
+}
+
+
